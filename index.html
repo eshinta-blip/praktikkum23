@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workshop Web Dev</title>
+
+  <!-- Google Fonts (PERTAMA) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- Custom CSS (TERAKHIR) -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top shadow" id="mainNavbar">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">
+        <i class="bi bi-code-slash me-2 text-warning"></i>WebDev Workshop
+      </a>
+      <!-- Hamburger menu (tampil di mobile) -->
+      <button class="navbar-toggler border-0" type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navCollapse">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <li class="nav-item">
+            <a class="nav-link px-3" href="#tentang">Tentang</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link px-3" href="#materi">Materi</a>
+          </li>
+          <!-- Dropdown Bertingkat -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle px-3" href="#"
+               data-bs-toggle="dropdown">Info</a>
+            <ul class="dropdown-menu dropdown-menu-end shadow border-0">
+              <!-- Kategori 1: ACARA -->
+              <li><h6 class="dropdown-header">📅 ACARA</h6></li>
+              <li>
+                <a class="dropdown-item" href="#">
+                  <i class="bi bi-calendar-event me-2 text-primary"></i>Jadwal Batch
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">
+                  <i class="bi bi-geo-alt me-2 text-primary"></i>Lokasi Workshop
+                </a>
+              </li>
+              <li><hr class="dropdown-divider"></li>
+              <!-- Kategori 2: INFORMASI -->
+              <li><h6 class="dropdown-header">ℹ️ INFORMASI</h6></li>
+              <li>
+                <a class="dropdown-item" href="#">
+                  <i class="bi bi-question-circle me-2 text-warning"></i>FAQ
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">
+                  <i class="bi bi-file-earmark-text me-2 text-warning"></i>Silabus
+                </a>
+              </li>
+              <li><hr class="dropdown-divider"></li>
+              <!-- Kategori 3: KONTAK -->
+              <li><h6 class="dropdown-header">📞 KONTAK</h6></li>
+              <li>
+                <a class="dropdown-item" href="#">
+                  <i class="bi bi-whatsapp me-2 text-success"></i>Chat WhatsApp
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">
+                  <i class="bi bi-envelope me-2 text-success"></i>Email Panitia
+                </a>
+              </li>
+            </ul>
+          </li>
+          <!-- Tombol CTA -->
+          <li class="nav-item ms-lg-2">
+            <a class="btn btn-warning btn-sm fw-semibold px-4 text-dark" href="#daftar">
+              <i class="bi bi-pencil-fill me-1"></i>Daftar
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== CAROUSEL HERO (3 Slide) ===== -->
+  <div id="heroCarousel" class="carousel slide carousel-fade"
+       data-bs-ride="carousel" data-bs-interval="4000">
+
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3"></button>
+    </div>
+
+    <div class="carousel-inner">
+
+      <!-- Slide 1 – gradient biru gelap -->
+      <div class="carousel-item active slide-1">
+        <div class="container slide-content">
+          <div class="row align-items-center min-vh-100">
+            <div class="col-lg-7 py-5">
+              <span class="badge bg-warning text-dark fs-6 mb-3 px-3">✦ Batch 2025</span>
+              <h1 class="display-4 fw-black text-white lh-sm mb-3">
+                Bootstrap 5<br>Mastery Workshop
+              </h1>
+              <p class="lead text-white fw-semibold mb-1">
+                Bootstrap 5 Mastery Workshop
+              </p>
+              <p class="lead text-white-75 mb-4">
+                Kuasai framework CSS terpopuler di dunia dalam 2 hari intensif bersama mentor berpengalaman industri.
+              </p>
+              <div class="d-flex flex-wrap gap-3">
+                <a href="#daftar" class="btn btn-warning btn-lg px-5 fw-semibold shadow">
+                  <i class="bi bi-pencil-fill me-2"></i>Daftar Sekarang
+                </a>
+                <a href="#tentang" class="btn btn-outline-light btn-lg px-5">Pelajari ↓</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 – gradient ungu -->
+      <div class="carousel-item slide-2">
+        <div class="container slide-content">
+          <div class="row align-items-center min-vh-100">
+            <div class="col-lg-7 py-5">
+              <span class="badge bg-info text-dark fs-6 mb-3 px-3">🎓 Sertifikat Resmi</span>
+              <h1 class="display-4 fw-black text-white lh-sm mb-3">
+                Belajar Bareng<br>Para Expert
+              </h1>
+              <p class="lead text-white-75 mb-4">
+                Mentor aktif di industri dengan pengalaman 10+ tahun siap membimbing kamu dari nol hingga mahir.
+              </p>
+              <div class="d-flex flex-wrap gap-3">
+                <a href="#daftar" class="btn btn-info btn-lg px-5 fw-semibold shadow text-dark">
+                  <i class="bi bi-pencil-fill me-2"></i>Daftar Sekarang
+                </a>
+                <a href="#tentang" class="btn btn-outline-light btn-lg px-5">Pelajari ↓</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 – gradient hijau -->
+      <div class="carousel-item slide-3">
+        <div class="container slide-content">
+          <div class="row align-items-center min-vh-100">
+            <div class="col-lg-7 py-5">
+              <span class="badge bg-success fs-6 mb-3 px-3">🚀 Real Project</span>
+              <h1 class="display-4 fw-black text-white lh-sm mb-3">
+                Bangun Project<br>Nyata Bersama
+              </h1>
+              <p class="lead text-white-75 mb-4">
+                Langsung praktek membuat 3 project nyata yang bisa kamu masukkan ke portofolio dan CV-mu.
+              </p>
+              <div class="d-flex flex-wrap gap-3">
+                <a href="#daftar" class="btn btn-success btn-lg px-5 fw-semibold shadow">
+                  <i class="bi bi-pencil-fill me-2"></i>Daftar Sekarang
+                </a>
+                <a href="#tentang" class="btn btn-outline-light btn-lg px-5">Pelajari ↓</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 4 – gradient merah-oranye (Early Bird) -->
+      <div class="carousel-item slide-4">
+        <div class="container slide-content">
+          <div class="row align-items-center min-vh-100">
+            <div class="col-lg-7 py-5">
+              <span class="badge bg-warning text-dark fs-6 mb-3 px-3">🐦 Early Bird</span>
+              <h1 class="display-4 fw-black text-white lh-sm mb-3">
+                Harga Spesial<br>Terbatas!
+              </h1>
+              <p class="lead text-white fw-semibold mb-1">Bootstrap 5 Mastery Workshop</p>
+              <p class="lead text-white-75 mb-3">
+                Daftar sekarang dan hemat lebih banyak dengan harga early bird sebelum kuota habis.
+              </p>
+              <div class="d-flex align-items-center gap-3 mb-4">
+                <div class="bg-white bg-opacity-15 rounded-3 px-4 py-3 text-center">
+                  <div class="text-white-75 small text-decoration-line-through">Rp 500.000</div>
+                  <div class="text-warning fw-black" style="font-size:2rem;">Rp 299.000</div>
+                  <div class="badge bg-danger mt-1">Hemat 40%</div>
+                </div>
+                <div class="text-white-75 small">
+                  <i class="bi bi-clock-history me-1 text-warning"></i>Penawaran berakhir<br>
+                  <strong class="text-white">31 Mei 2025</strong>
+                </div>
+              </div>
+              <div class="d-flex flex-wrap gap-3">
+                <a href="#daftar" class="btn btn-warning btn-lg px-5 fw-semibold shadow">
+                  <i class="bi bi-pencil-fill me-2"></i>Daftar Sekarang
+                </a>
+                <a href="#tentang" class="btn btn-outline-light btn-lg px-5">Pelajari ↓</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Prev / Next -->
+    <button class="carousel-control-prev" type="button"
+            data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button"
+            data-bs-target="#heroCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+
+  <!-- ===== STATS BAR ===== -->
+  <section class="py-4 bg-primary text-white">
+    <div class="container">
+      <div class="row text-center g-3">
+        <div class="col-6 col-md-3">
+          <div class="fw-bold display-6">500+</div>
+          <div class="small text-uppercase letter-spacing">Alumni</div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="fw-bold display-6">2</div>
+          <div class="small text-uppercase letter-spacing">Hari Intensif</div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="fw-bold display-6">10+</div>
+          <div class="small text-uppercase letter-spacing">Mentor</div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="fw-bold display-6">3</div>
+          <div class="small text-uppercase letter-spacing">Project</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION TENTANG ===== -->
+  <section id="tentang" class="py-5">
+    <div class="container py-4">
+      <div class="text-center mb-5">
+        <span class="badge bg-primary-subtle text-primary px-3 py-2 mb-3">Tentang Workshop</span>
+        <h2 class="fw-bold display-6">Kenapa Workshop Ini?</h2>
+        <p class="text-muted mx-auto" style="max-width:500px;">
+          Dirancang untuk mahasiswa dan fresh graduate yang ingin menguasai Bootstrap 5 secara mendalam.
+        </p>
+      </div>
+
+      <div class="row g-4 justify-content-center">
+        <div class="col-md-4">
+          <div class="card border-0 shadow card-hover text-center p-4 h-100">
+            <div class="mb-3">
+              <i class="bi bi-lightning-charge-fill text-warning" style="font-size:2.5rem;"></i>
+            </div>
+            <h5 class="fw-bold">Intensif &amp; Efisien</h5>
+            <p class="text-muted small">Materi padat dalam 2 hari langsung bisa diaplikasikan dalam project nyata di industri.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-0 shadow card-hover text-center p-4 h-100">
+            <div class="mb-3">
+              <i class="bi bi-people-fill text-primary" style="font-size:2.5rem;"></i>
+            </div>
+            <h5 class="fw-bold">Mentor Berpengalaman</h5>
+            <p class="text-muted small">Belajar langsung dari praktisi industri dengan pengalaman lebih dari 10 tahun membangun produk digital.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-0 shadow card-hover text-center p-4 h-100">
+            <div class="mb-3">
+              <i class="bi bi-patch-check-fill text-success" style="font-size:2.5rem;"></i>
+            </div>
+            <h5 class="fw-bold">Sertifikat Resmi</h5>
+            <p class="text-muted small">Dapatkan sertifikat kelulusan yang diakui industri dan memperkuat portofolio dan CV-mu.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SHADOW COMPARISON SECTION (Tugas 5) ===== -->
+  <section id="shadow-demo" class="py-5 bg-light">
+    <div class="container py-4">
+      <div class="text-center mb-5">
+        <span class="badge bg-secondary-subtle text-secondary px-3 py-2 mb-3">Bootstrap Utility</span>
+        <h2 class="fw-bold display-6">Perbandingan Shadow</h2>
+        <p class="text-muted">4 tingkat shadow Bootstrap yang siap pakai untuk kedalaman visual</p>
+      </div>
+      <div class="row g-4 justify-content-center">
+        <!-- shadow-none -->
+        <div class="col-6 col-md-3">
+          <div class="card border shadow-none text-center p-4 h-100">
+            <div class="mb-3">
+              <i class="bi bi-square text-secondary" style="font-size:2rem;"></i>
+            </div>
+            <h6 class="fw-bold">Tanpa Shadow</h6>
+            <code class="small text-muted">shadow-none</code>
+            <p class="text-muted small mt-2 mb-0">Tidak ada bayangan, cocok untuk reset atau elemen flat.</p>
+          </div>
+        </div>
+        <!-- shadow-sm -->
+        <div class="col-6 col-md-3">
+          <div class="card border-0 shadow-sm text-center p-4 h-100">
+            <div class="mb-3">
+              <i class="bi bi-square-fill text-primary" style="font-size:2rem; opacity:0.4;"></i>
+            </div>
+            <h6 class="fw-bold">Shadow Kecil</h6>
+            <code class="small text-muted">shadow-sm</code>
+            <p class="text-muted small mt-2 mb-0">Shadow halus, cocok untuk card informasi atau badge area.</p>
+          </div>
+        </div>
+        <!-- shadow -->
+        <div class="col-6 col-md-3">
+          <div class="card border-0 shadow text-center p-4 h-100">
+            <div class="mb-3">
+              <i class="bi bi-square-fill text-primary" style="font-size:2rem; opacity:0.7;"></i>
+            </div>
+            <h6 class="fw-bold">Shadow Sedang</h6>
+            <code class="small text-muted">shadow</code>
+            <p class="text-muted small mt-2 mb-0">Shadow sedang, cocok untuk card utama dan container section.</p>
+          </div>
+        </div>
+        <!-- shadow-lg -->
+        <div class="col-6 col-md-3">
+          <div class="card border-0 shadow-lg text-center p-4 h-100">
+            <div class="mb-3">
+              <i class="bi bi-square-fill text-primary" style="font-size:2rem;"></i>
+            </div>
+            <h6 class="fw-bold">Shadow Besar</h6>
+            <code class="small text-muted">shadow-lg</code>
+            <p class="text-muted small mt-2 mb-0">Shadow tegas, cocok untuk modal, form utama, atau hero card.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION MATERI ===== -->
+  <section id="materi" class="py-5 bg-light">
+    <div class="container py-4">
+      <div class="text-center mb-5">
+        <span class="badge bg-success-subtle text-success px-3 py-2 mb-3">Kurikulum</span>
+        <h2 class="fw-bold display-6">Materi Workshop</h2>
+        <p class="text-muted">6 modul penuh praktik yang akan kamu kuasai</p>
+      </div>
+
+      <div class="row g-3">
+        <div class="col-md-6">
+          <div class="card border-0 shadow-sm card-hover p-3">
+            <div class="d-flex align-items-start gap-3">
+              <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center flex-shrink-0" style="width:40px;height:40px;font-weight:700;">1</div>
+              <div>
+                <h6 class="fw-bold mb-1">Bootstrap Grid &amp; Flexbox</h6>
+                <p class="text-muted small mb-0">Container, row, col breakpoints, flexbox, gap, align, justify</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card border-0 shadow-sm card-hover p-3">
+            <div class="d-flex align-items-start gap-3">
+              <div class="rounded-circle bg-success text-white d-flex align-items-center justify-content-center flex-shrink-0" style="width:40px;height:40px;font-weight:700;">2</div>
+              <div>
+                <h6 class="fw-bold mb-1">Spacing, Typography &amp; Shadow</h6>
+                <p class="text-muted small mb-0">m-, p-, fs-, fw-, text-*, shadow-sm/md/lg utilities</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card border-0 shadow-sm card-hover p-3">
+            <div class="d-flex align-items-start gap-3">
+              <div class="rounded-circle bg-warning text-dark d-flex align-items-center justify-content-center flex-shrink-0" style="width:40px;height:40px;font-weight:700;">3</div>
+              <div>
+                <h6 class="fw-bold mb-1">Kustomisasi Form Bootstrap</h6>
+                <p class="text-muted small mb-0">Input, Select, Textarea, Floating Labels, Input Group, Validation</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card border-0 shadow-sm card-hover p-3">
+            <div class="d-flex align-items-start gap-3">
+              <div class="rounded-circle bg-danger text-white d-flex align-items-center justify-content-center flex-shrink-0" style="width:40px;height:40px;font-weight:700;">4</div>
+              <div>
+                <h6 class="fw-bold mb-1">Navbar &amp; Dropdown</h6>
+                <p class="text-muted small mb-0">Responsive navbar, collapse, dropdown menu, nav active states</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card border-0 shadow-sm card-hover p-3">
+            <div class="d-flex align-items-start gap-3">
+              <div class="rounded-circle bg-info text-dark d-flex align-items-center justify-content-center flex-shrink-0" style="width:40px;height:40px;font-weight:700;">5</div>
+              <div>
+                <h6 class="fw-bold mb-1">Modal &amp; Alert</h6>
+                <p class="text-muted small mb-0">Modal dialog, scrollable, backdrop, dismiss, alert component</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card border-0 shadow-sm card-hover p-3">
+            <div class="d-flex align-items-start gap-3">
+              <div class="rounded-circle bg-secondary text-white d-flex align-items-center justify-content-center flex-shrink-0" style="width:40px;height:40px;font-weight:700;">6</div>
+              <div>
+                <h6 class="fw-bold mb-1">Carousel &amp; Final Project</h6>
+                <p class="text-muted small mb-0">Carousel slide/fade, indicator, controls, bangun 3 project nyata</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION FORM PENDAFTARAN ===== -->
+  <section id="daftar" class="py-5">
+    <div class="container py-4">
+      <div class="row justify-content-center">
+        <div class="col-lg-7">
+          <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
+
+            <!-- Card Header -->
+            <div class="card-header bg-primary text-white py-4 px-5 text-center">
+              <span class="badge bg-warning text-dark px-3 mb-2">Pendaftaran Peserta</span>
+              <h2 class="fw-bold mb-1 fs-4">Daftar Workshop</h2>
+              <p class="mb-0 small opacity-75">
+                <i class="bi bi-clock me-1"></i>Quota tersisa 12 hari dari 30
+              </p>
+            </div>
+
+            <div class="card-body p-5">
+
+              <!-- Alert info -->
+              <div class="alert alert-info alert-dismissible fade show mb-4">
+                <i class="bi bi-info-circle-fill me-2"></i>
+                <strong>Info:</strong> Pendaftaran ditutup 2 hari sebelum pelaksanaan.
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+              </div>
+
+              <form id="regForm" class="needs-validation" novalidate>
+
+                <!-- Input: Nama & NIM dengan icon -->
+                <div class="row g-3 mb-3">
+                  <div class="col-md-7">
+                    <div class="form-floating input-icon-wrap">
+                      <span class="input-icon"><i class="bi bi-person"></i></span>
+                      <input type="text" class="form-control ps-icon" id="nama"
+                             placeholder="Nama" required minlength="3">
+                      <label for="nama" class="ps-icon">Nama Lengkap</label>
+                      <div class="invalid-feedback">Nama minimal 3 karakter.</div>
+                    </div>
+                  </div>
+                  <div class="col-md-5">
+                    <div class="form-floating input-icon-wrap">
+                      <span class="input-icon"><i class="bi bi-person-badge"></i></span>
+                      <input type="text" class="form-control ps-icon" id="nim"
+                             placeholder="NIM" required>
+                      <label for="nim" class="ps-icon">NIM</label>
+                      <div class="invalid-feedback">Masukkan NIM.</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Floating Label Email dengan icon -->
+                <div class="form-floating mb-3 input-icon-wrap">
+                  <span class="input-icon"><i class="bi bi-envelope"></i></span>
+                  <input type="email" class="form-control ps-icon" id="email"
+                         placeholder="name@example.com" required
+                         pattern="[a-z0-9._%+\-]+@students\.amikom\.ac\.id">
+                  <label for="email" class="ps-icon">Email Aktif</label>
+                  <div class="invalid-feedback">Gunakan email @students.amikom.ac.id</div>
+                </div>
+
+                <!-- Input Group: Nomor WhatsApp -->
+                <div class="mb-3">
+                  <label class="form-label fw-semibold small text-muted text-uppercase">
+                    Nomor WhatsApp
+                  </label>
+                  <div class="input-group">
+                    <span class="input-group-text bg-success text-white border-0">
+                      <i class="bi bi-whatsapp me-1"></i> +62
+                    </span>
+                    <input type="tel" class="form-control" id="hp"
+                           placeholder="812xxxxxxxx" required pattern="[0-9]{9,13}">
+                    <div class="invalid-feedback">Nomor WA tidak valid.</div>
+                  </div>
+                </div>
+
+                <!-- Floating Label Select: Pilih Batch dengan icon -->
+                <div class="form-floating mb-3 input-icon-wrap">
+                  <span class="input-icon"><i class="bi bi-calendar3"></i></span>
+                  <select class="form-select ps-icon" id="batch" required>
+                    <option value="" selected disabled></option>
+                    <option value="b1">Batch 1 | 10–11 Mei 2025 (Online)</option>
+                    <option value="b2">Batch 2 | 17–18 Mei 2025 (Offline)</option>
+                  </select>
+                  <label for="batch" class="ps-icon">Pilih Batch</label>
+                  <div class="invalid-feedback">Pilih batch.</div>
+                </div>
+
+                <!-- Radio: Level Saat Ini dengan icon -->
+                <div class="mb-3">
+                  <label class="form-label fw-semibold small text-muted text-uppercase">
+                    Level Saat Ini
+                  </label>
+                  <div class="d-flex gap-3">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="level"
+                             id="lv1" value="pemula" required>
+                      <label class="form-check-label" for="lv1">
+                        <i class="bi bi-bar-chart me-1 text-secondary"></i>Pemula
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="level"
+                             id="lv2" value="menengah">
+                      <label class="form-check-label" for="lv2">
+                        <i class="bi bi-bar-chart-fill me-1 text-primary"></i>Menengah
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="level"
+                             id="lv3" value="mahir">
+                      <label class="form-check-label" for="lv3">
+                        <i class="bi bi-graph-up-arrow me-1 text-success"></i>Mahir
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Checkbox: Topik Yang Ingin Dipelajari -->
+                <div class="mb-3">
+                  <label class="form-label fw-semibold small text-muted text-uppercase">
+                    Topik Yang Ingin Dipelajari
+                  </label>
+                  <div class="d-flex flex-wrap gap-3">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="topik1" value="grid">
+                      <label class="form-check-label" for="topik1">Bootstrap Grid</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="topik2" value="form" checked>
+                      <label class="form-check-label" for="topik2">Form &amp; Komponen</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="topik3" value="project">
+                      <label class="form-check-label" for="topik3">Final Project</label>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Floating Textarea: Motivasi -->
+                <div class="form-floating mb-4">
+                  <textarea class="form-control" id="motivasi" placeholder="Motivasi"
+                            style="height:110px" required minlength="20"></textarea>
+                  <label for="motivasi">Motivasi Ikut Workshop</label>
+                  <div class="invalid-feedback">Minimal 20 karakter.</div>
+                </div>
+
+                <!-- Switch: Setuju S&K -->
+                <div class="form-check form-switch mb-4">
+                  <input class="form-check-input" type="checkbox" role="switch"
+                         id="agreeSwitch" required>
+                  <label class="form-check-label" for="agreeSwitch">
+                    Saya setuju dengan
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#syaratModal">
+                      Syarat &amp; Ketentuan
+                    </a>
+                  </label>
+                  <div class="invalid-feedback">Setujui syarat.</div>
+                </div>
+
+                <!-- Submit -->
+                <div class="d-grid">
+                  <button type="submit" class="btn btn-primary btn-lg fw-semibold py-3">
+                    <i class="bi bi-send-fill me-2"></i>Kirim Pendaftaran
+                  </button>
+                </div>
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="bg-dark text-white py-4 text-center">
+    <p class="mb-0 small opacity-50">&copy; 2025 WebDev Workshop — Universitas AMIKOM Yogyakarta</p>
+  </footer>
+
+  <!-- ===== MODAL: Syarat & Ketentuan ===== -->
+  <div class="modal fade" id="syaratModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title">Syarat &amp; Ketentuan</h5>
+          <button type="button" class="btn-close btn-close-white"
+                  data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <h6>1. Persyaratan Peserta</h6>
+          <p class="text-muted small">Terbuka untuk semua yang memiliki dasar HTML/CSS.</p>
+          <h6>2. Pembayaran</h6>
+          <p class="text-muted small">Non-refundable, dibayar 3 hari setelah konfirmasi.</p>
+          <h6>3. Kehadiran</h6>
+          <p class="text-muted small">Minimal kehadiran 80% untuk mendapatkan sertifikat.</p>
+          <h6>4. Kode Etik</h6>
+          <p class="text-muted small">Peserta wajib menjaga kondusivitas selama workshop berlangsung.</p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-outline-secondary" data-bs-dismiss="modal">Tutup</button>
+          <button class="btn btn-primary" data-bs-dismiss="modal"
+                  onclick="document.getElementById('agreeSwitch').checked=true">
+            Saya Setuju
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== MODAL: Konfirmasi (Tugas 3) ===== -->
+  <div class="modal fade" id="konfirmasiModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-0 shadow-lg">
+        <div class="modal-header border-0 pb-0">
+          <h5 class="modal-title fw-bold">
+            <i class="bi bi-send-check text-primary me-2"></i>Konfirmasi Pendaftaran
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body text-center py-4">
+          <i class="bi bi-patch-question-fill text-warning" style="font-size:3rem;"></i>
+          <p class="mt-3 mb-0">Apakah data pendaftaran kamu sudah benar?<br>
+          <span class="text-muted small">Pastikan nama, NIM, dan email sudah sesuai.</span></p>
+        </div>
+        <div class="modal-footer border-0 justify-content-center gap-2 pb-4">
+          <button class="btn btn-outline-secondary px-4" data-bs-dismiss="modal">
+            <i class="bi bi-x-circle me-1"></i>Batal
+          </button>
+          <button class="btn btn-primary px-5 fw-semibold" id="btnYaKirim">
+            <i class="bi bi-send-fill me-1"></i>Ya, Kirim
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== MODAL: Sukses ===== -->
+  <div class="modal fade" id="successModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-0 shadow-lg">
+        <div class="modal-body text-center p-5">
+          <i class="bi bi-check-circle-fill text-success" style="font-size:4rem;"></i>
+          <h4 class="fw-bold mt-3 mb-2">Pendaftaran Berhasil!</h4>
+          <p class="text-muted">Tim kami akan menghubungi kamu via email &amp; WhatsApp.</p>
+        </div>
+        <div class="modal-footer border-0 justify-content-center pb-4">
+          <button class="btn btn-success btn-lg px-5" data-bs-dismiss="modal">
+            OK, Mengerti!
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- JavaScript Validasi Form -->
+  <script>
+    (function () {
+      const form = document.getElementById('regForm');
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (!form.checkValidity()) {
+          form.classList.add('was-validated');
+          return;
+        }
+        // Tugas 3: Tampilkan modal konfirmasi dulu
+        const konfirmasiModal = new bootstrap.Modal(document.getElementById('konfirmasiModal'));
+        konfirmasiModal.show();
+      });
+
+      // Tombol "Ya, Kirim" di modal konfirmasi
+      document.getElementById('btnYaKirim').addEventListener('click', function () {
+        const konfirmasiModal = bootstrap.Modal.getInstance(document.getElementById('konfirmasiModal'));
+        konfirmasiModal.hide();
+        // Setelah konfirmasi ditutup, tampilkan modal sukses
+        document.getElementById('konfirmasiModal').addEventListener('hidden.bs.modal', function handler() {
+          const successModal = new bootstrap.Modal(document.getElementById('successModal'));
+          successModal.show();
+          form.reset();
+          form.classList.remove('was-validated');
+          document.getElementById('konfirmasiModal').removeEventListener('hidden.bs.modal', handler);
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>

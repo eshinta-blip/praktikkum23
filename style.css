@@ -1,0 +1,230 @@
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Tambah padding-top agar konten tidak tertutup navbar fixed */
+body {
+  padding-top: 0;
+}
+
+/* Untuk teks letter-spacing di stats bar */
+.letter-spacing {
+  letter-spacing: 0.1em;
+}
+
+/* ===== NAVBAR ===== */
+#mainNavbar {
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#mainNavbar .nav-link {
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+#mainNavbar .navbar-brand {
+  font-size: 1.1rem;
+  letter-spacing: -0.02em;
+}
+
+/* ===== CAROUSEL ===== */
+
+/* Slide 1 – gradient biru gelap */
+.slide-1 {
+  background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 60%, #16213e 100%);
+  min-height: 100vh;
+}
+
+/* Slide 2 – gradient ungu */
+.slide-2 {
+  background: linear-gradient(135deg, #2d1b69 0%, #4a1fa8 60%, #1a0a3d 100%);
+  min-height: 100vh;
+}
+
+/* Slide 3 – gradient hijau teal */
+.slide-3 {
+  background: linear-gradient(135deg, #0d4f3c 0%, #1a7a5e 60%, #0a3329 100%);
+  min-height: 100vh;
+}
+
+/* Slide 4 – gradient merah-oranye (Early Bird) */
+.slide-4 {
+  background: linear-gradient(135deg, #7f0000 0%, #c0392b 40%, #e67e22 100%);
+  min-height: 100vh;
+}
+
+.slide-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* ===== SHADOW COMPARISON SECTION (Tugas 5) ===== */
+#shadow-demo .card {
+  transition: transform 0.2s ease;
+}
+
+#shadow-demo .card:hover {
+  transform: translateY(-4px);
+}
+
+#shadow-demo code {
+  background: #f1f5f9;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+/* Indikator carousel lebih besar */
+.carousel-indicators [data-bs-target] {
+  width: 30px;
+  height: 4px;
+  border-radius: 2px;
+  opacity: 0.5;
+}
+
+.carousel-indicators .active {
+  opacity: 1;
+}
+
+/* ===== STATS BAR ===== */
+/* Warna teks angka di stats bar sedikit lebih cerah */
+.bg-primary .display-6 {
+  font-weight: 800;
+  font-size: 2rem;
+}
+
+/* ===== CARD HOVER EFFECT ===== */
+.card-hover {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* ===== SECTION MATERI – numbered circle ===== */
+.rounded-circle.bg-primary,
+.rounded-circle.bg-success,
+.rounded-circle.bg-warning,
+.rounded-circle.bg-danger,
+.rounded-circle.bg-info,
+.rounded-circle.bg-secondary {
+  font-size: 0.9rem;
+}
+
+/* ===== ICON DI DALAM FLOATING LABEL FORM ===== */
+.input-icon-wrap {
+  position: relative;
+}
+
+.input-icon-wrap .input-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  color: #6c757d;
+  font-size: 1rem;
+  pointer-events: none;
+  /* Turunkan sedikit agar sejajar dengan teks input floating */
+  margin-top: 6px;
+}
+
+/* Geser input & label ke kanan agar tidak tertimpa icon */
+.form-floating .form-control.ps-icon,
+.form-floating .form-select.ps-icon {
+  padding-left: 2.6rem;
+}
+
+.form-floating label.ps-icon {
+  padding-left: 2.6rem;
+}
+
+/* Saat label float ke atas (saat input aktif/isi), icon tetap di bawah */
+.form-floating > .form-control.ps-icon:focus ~ label.ps-icon,
+.form-floating > .form-control.ps-icon:not(:placeholder-shown) ~ label.ps-icon,
+.form-floating > .form-select.ps-icon ~ label.ps-icon {
+  padding-left: 2.6rem;
+}
+
+
+
+/* Card form shadow & rounded */
+#daftar .card {
+  border-radius: 1rem !important;
+}
+
+/* Card header gradient sedikit lebih dalam */
+#daftar .card-header {
+  background: linear-gradient(135deg, #0d6efd, #0056c7) !important;
+}
+
+/* Floating label focus color */
+.form-control:focus,
+.form-select:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.18);
+}
+
+/* Input group WhatsApp icon */
+.input-group-text.bg-success {
+  min-width: 80px;
+  justify-content: center;
+  font-weight: 600;
+}
+
+/* Submit button */
+#regForm .btn-primary {
+  border-radius: 0.6rem;
+  letter-spacing: 0.02em;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+#regForm .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(13, 110, 253, 0.35);
+}
+
+/* ===== MODAL ===== */
+.modal-content {
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ===== UTILITY TAMBAHAN ===== */
+
+/* text-white-75 (Bootstrap tidak punya, kita buat sendiri) */
+.text-white-75 {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+/* Badge subtle (fallback jika Bootstrap versi lama) */
+.bg-primary-subtle {
+  background-color: rgba(13, 110, 253, 0.12) !important;
+}
+
+.bg-success-subtle {
+  background-color: rgba(25, 135, 84, 0.12) !important;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 767.98px) {
+  .slide-1, .slide-2, .slide-3 {
+    min-height: 100svh;
+  }
+
+  .display-4 {
+    font-size: 2rem;
+  }
+
+  #daftar .card-body {
+    padding: 2rem 1.5rem !important;
+  }
+}
